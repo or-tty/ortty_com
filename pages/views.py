@@ -1,0 +1,15 @@
+from django.shortcuts import render
+
+
+def home_view(request):
+    return render(
+        request, 'pages/home.html', {
+            "is_home": True
+        }
+    )
+
+
+def games_view(request):
+    return render(
+        request, 'pages/games.html'
+    )
