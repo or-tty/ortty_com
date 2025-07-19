@@ -10,27 +10,9 @@
         {% block title %}{% endblock title %} • {{ home_view.domain }}
       {% endif %}
     </title>
-
-    <style>
-      html, body {
-        background-color: #1e1e2f;
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        color: #e4e4e4;
-        font-family: sans-serif;
-      }
-
-      .wrapper {
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-
-      main {
-        flex: 1; /* занимает всё свободное пространство */
-      }
-    </style>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
   </head>
 
   <body>
