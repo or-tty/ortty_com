@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <title>
       {% if is_home %}
-        {{ home_view.domain }}, {{ home_view.title }}
+        Главная
       {% else %}
-        {% block title %}{% endblock title %} • {{ home_view.domain }}
+        {% block title %}{% endblock title %}
       {% endif %}
     </title>
+    <link href="{% static 'img/icon.png' %}" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
