@@ -8,8 +8,3 @@ def home_view(request):
         }
     )
 
-
-def games_view(request):
-    return render(
-        request, 'pages/games.html'
-    )
