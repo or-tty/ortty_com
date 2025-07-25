@@ -11,7 +11,7 @@ class Game(models.Model):
         GAMEJAM = 'GJ', 'Gamejam'
 
     title = models.CharField(max_length=250)
-    slug = models.SlugField(max_length=250)
+    slug = models.SlugField(max_length=250, unique=True)
     link = models.URLField(default='https://ortty.itch.io/')
     body = models.TextField()
     publish = models.DateTimeField(default=timezone.now)
@@ -27,5 +27,5 @@ class Game(models.Model):
             models.Index(fields=['-publish']),
         ]
 
-    def str(self):
+    def __str__(self):
         return self.title

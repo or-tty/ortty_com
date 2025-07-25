@@ -1,0 +1,39 @@
+{% extends "games/base.html" %}
+
+{% block page_title %}Главная страница игр{% endblock %}
+
+{% block games_content %}
+    <h1>My Games</h1>
+
+    <!-- Фильтры по статусу -->
+    <div class="status-filters">
+        <a href="{% url 'games:game_list' %}" 
+           class="{% if not current_status %}active{% endif %}">
+           Все
+        </a>
+        {% for value, label in statuses %}
+            <a href="?status={{ value }}" 
+               class="{% if current_status == value %}active{% endif %}">
+               {{ label }}
+            </a>
+        {% endfor %}
+    </div>
+
+    <hr>
+
+    {% for game in games %}
+        <h2>
+            <a href="{% url 'games:game_detail' game.slug %}">
+                {{ game.title }}
+            </a>
+        </h2>
+        <p>
+            <a href="{{game.link}}">
+                itch.io
+            </a>
+        </p>
+        {{ game.body|truncatewords:15|linebreaks }}
+    {% empty %}
+        <p>Нет игр для отображения.</p>
+    {% endfor %}
+{% endblock %}

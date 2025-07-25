@@ -1,0 +1,11 @@
+{% extends "games/base.html" %}
+
+{% block page_title %}{{ game.title }}{% endblock %}
+
+{% block games_content %}
+    <h1>{{ game.title }}</h1>
+    <p class="date">
+        Published {{ game.publish }}
+    </p>
+    {{ game.body|linebreaks }}
+{% endblock %}
