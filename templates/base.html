@@ -14,14 +14,18 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/games.css' %}">
   </head>
   <body>
     <div class="wrapper">
       {% include 'includes/navbar.html' %}
 
       <main>
-        {% block content %}
-        {% endblock content %}
+        <div class="content-container">
+          {% block content %}
+          {% endblock content %}
+        </div>
       </main>
 
       {% include 'includes/footer.html' %}

@@ -14,6 +14,7 @@ class Game(models.Model):
     slug = models.SlugField(max_length=250, unique=True)
     link = models.URLField(default='https://ortty.itch.io/')
     body = models.TextField()
+    image_url = models.URLField(blank=True, null=True)
     publish = models.DateTimeField(default=timezone.now)
     status = models.CharField(
         max_length=5,

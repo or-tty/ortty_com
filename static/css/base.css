@@ -1,18 +1,30 @@
 html, body {
-    background-color: #615049;
-    margin: 0;
-    padding-top: 30px;
+    background-color: #333333;
     height: 100%;
-    color: #F1D3BC;
+    color: #e2e2e2;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5;
     font-family: sans-serif;
+    padding-top: 30px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* центрирование по горизонтали */
+    padding: 2rem;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 1600px;
 }
 
 .wrapper {
     min-height: 100%;
     display: flex;
     flex-direction: column;
-}
-
-main {
-    flex: 1; /* занимает всё свободное пространство */
 }

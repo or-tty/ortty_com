@@ -3,7 +3,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #F34A4A;
+    background-color: #dd3a44;
     padding: 20px 20px;
 
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
@@ -28,10 +28,10 @@ nav ul {
 nav li a {
     font-size: 25px; /* увеличенный шрифт */
     text-decoration: none;
-    color: #F1D3BC;
+    color: #e2e2e2;
     font-weight: bold;
 }
 
 nav li a:hover {
-    color: #262f34;
+    color: #333333;
 }

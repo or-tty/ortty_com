@@ -3,14 +3,12 @@
 {% block page_title %}Главная страница игр{% endblock %}
 
 {% block games_content %}
-    <h1>My Games</h1>
+    <div class="games-banner">
+        <h1>My Games</h1>
+    </div>
 
     <!-- Фильтры по статусу -->
     <div class="status-filters">
-        <a href="{% url 'games:game_list' %}" 
-           class="{% if not current_status %}active{% endif %}">
-           Все
-        </a>
         {% for value, label in statuses %}
             <a href="?status={{ value }}" 
                class="{% if current_status == value %}active{% endif %}">
@@ -22,17 +20,22 @@
     <hr>
 
     {% for game in games %}
-        <h2>
-            <a href="{% url 'games:game_detail' game.slug %}">
-                {{ game.title }}
-            </a>
-        </h2>
-        <p>
-            <a href="{{game.link}}">
-                itch.io
-            </a>
-        </p>
-        {{ game.body|truncatewords:15|linebreaks }}
+        <a href="{% url 'games:game_detail' game.slug %}" class="game-box-link">            
+            <div class="game-box">
+                {% if game.image_url %}
+                    <img src="{{ game.image_url }}" alt="{{ game.title }}" class="game-image">
+                {% endif %}
+
+                <h2>{{ game.title }}</h2>
+
+                <div class="game-body">
+                    {{ game.body|truncatewords:15|linebreaks }}
+                </div>
+            </div>
+        </a>
+        <button class="itch-button" onclick="event.stopPropagation(); window.open('{{ game.link }}', '_blank')">
+            itch.io
+        </button>
     {% empty %}
         <p>Нет игр для отображения.</p>
     {% endfor %}
