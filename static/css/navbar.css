@@ -16,6 +16,10 @@ nav.hide {
     transform: translateY(-100%);
 }
 
+.custom-header {
+    background-color: #e2e2e2; /* любой цвет в hex */
+}
+
 nav ul {
     list-style: none;
     padding: 0;
